@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate QR Code for Book Details</h1>
+        <form method="POST" action="/">
+            <label for="name_book">Name of Book:</label>
+            <input type="text" id="name_book" name="name_book" required>
+            
+            <label for="name_author">Name of Author:</label>
+            <input type="text" id="name_author" name="name_author" required>
+            
+            <label for="qty">Quantity:</label>
+            <input type="number" id="qty" name="qty" required>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+            
+            <label for="cat">Category:</label>
+            <input type="number" id="cat" name="cat" required>
+            
+            <button type="submit">Generate QR Code</button>
+        </form>
+        
+        {% if qr_path %}
+        <h2>Generated QR Code:</h2>
+        <img src="{{ qr_path }}" alt="QR Code">
+        {% endif %}
+    </div>
+</body>
+</html>
